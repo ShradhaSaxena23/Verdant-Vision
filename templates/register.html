@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+{% load static %} 
+
+{% block title %}signup Page{% endblock %}
+{% block css_files%}
+<link rel="stylesheet" href="{% static "register.css" %}" />
+
+{% endblock %}
+
+{%  block content %}
+<div class="wrapper">
+    <div class="title">
+      Registration Form
+    </div>
+    <div class="form">
+	<form method = 'post'>
+	{% csrf_token %}
+       <div class="inputfield">
+          <label>E-mail Address</label>
+          <input type="text" class="input" name='email' required>
+       </div>  
+        <div class="inputfield">
+          <label>Username</label>
+          <input type="text" class="input" name='username' required>
+       </div>  
+       <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input" name='password' required>
+       </div>  
+      <div class="inputfield">
+          <label>Confirm Password</label>
+          <input type="password" class="input" name='confirm' required>
+       </div>  
+      <div class="inputfield">
+        <input type="submit" class="btn">
+      </div>
+	</form>
+	{% if error %}
+	<p>{{ error }}</p>
+	{% endif %}
+    </div>
+</div>
+{% endblock %}

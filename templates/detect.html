@@ -1,0 +1,30 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}Detect Disease{% endblock %}
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+{% block content %}
+<body>
+<!-- partial:index.partial.html -->
+  <div class="container">
+    <div class="card">
+      <h3>Upload Files</h3>
+      <form id="uploadForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="drop_box">
+          <header>
+            <h4><label for='file-upload' class='custom-file-upload'>Select File</label></h4>
+          </header>
+          <input type="file" name="image" accept="image/*" id='file-upload' style="display:none" required>
+          <div id="preview"></div> <!-- This will display the image preview -->
+          <button type="submit" class="btn">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- partial -->
+  <script  src="{% static 'script.js' %}"></script>
+
+</body>
+{% endblock %}

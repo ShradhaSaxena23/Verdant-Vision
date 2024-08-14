@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% load static %} 
+
+{% block title %}signup Page{% endblock %}
+{% block css_files%}
+<link rel="stylesheet" href="{% static "sign-in.css" %}" />
+
+{% endblock %}
+
+{%  block content %}
+<center>
+<div class="login-page">
+    <div class="form">
+      <form class="login-form" method='post'>
+	{% csrf_token %}
+        <input type="text" placeholder="username" name = 'username'/>
+        <input type="password" placeholder="password" name = 'password'/>
+        <button type = 'submit'>login</button>
+        <p class="message">Not registered? <a href="{% url "register" %}">Create an account</a></p>
+      </form>
+	{% if error %}
+		<p>{{ error }}</p>
+	{% endif %}
+    </div>
+  </div>
+  <center>
+{% endblock %}

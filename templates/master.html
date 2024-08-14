@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel='stylesheet' href="{% static 'app.css' %}">
+	{% block css_files%}{% endblock %}
+</head>
+
+<body>
+	<header>
+        <nav class="navbar">
+          <ul class="navbar-links">
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li><a href="{% url "about" %}">About</a></li>
+            <li><a href="{% url "detect" %}">Detect</a></li>
+            <li><a href="{% url "contact" %}">Contact</a></li>
+          </ul>
+          <button  class="signup-btn"><a href="{% url "sign-in" %}">Sign-up</a></button>
+        </nav>
+    </header>
+	
+	{% block content %}
+	{% endblock %}
+	
+	<footer>
+		<div class='footer-container'>
+			<div class='footer-section'>
+				<h3>About Us</h3>
+				<p>This Mini project was developed under the guidance of Er. Himanshu Kumar Shukla</p>
+			</div>
+			<div class='footer-section'>
+				<h3>Quick Navigation</h3>
+				<ul>
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'detect' %}">Detect</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="{% url 'testing' %}">testing</a></li>
+				</ul>
+			</div>
+			<div class='footer-section'>
+				<h3>Follow Us</h3>
+				<ul>
+              				<li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+              				<li><a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+              				<li><a href="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            			</ul>
+			</div>
+			<div class='footer-section'>
+				<h3>Copyright</h3>
+				<p>&copy; 2024 All Rights Reserved.</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

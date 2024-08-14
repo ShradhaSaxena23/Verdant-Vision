@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0ffe0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.disease-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #32CD32;
+    padding: 20px;
+    text-align: center;
+}
+
+.disease-header h1 {
+    margin: 0 20px 0 0;
+    font-size: 2em;
+    color: white;
+}
+
+.disease-header img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 150px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}

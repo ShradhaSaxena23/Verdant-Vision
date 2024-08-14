@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}Prediction Results{% endblock %}
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'predict.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="disease-header">
+        <h1>{{ disease_name }}</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3>Brief Description:</h3>
+            <p>{{ disease_info }}</p>
+        </div>
+        <div class="card">
+            <h3>Prevention and Cure:</h3>
+            <p>
+                {% for step in prevention_steps %}
+                {{ step}}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}

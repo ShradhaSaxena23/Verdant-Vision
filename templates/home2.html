@@ -1,0 +1,16 @@
+{% extends 'master.html' %}
+{% load static %} 
+
+{% block title %}Home{% endblock %}
+
+{%  block content %}
+
+<link rel="stylesheet" href="{% static 'home.css' %}">
+
+<div class="container">
+    <h1>Verdant Vision</h1>
+    <p>Click below to start</p>
+    <button class="button"><a href="{% url "detect" %}">Start</a></button>
+</div>
+
+{% endblock %}

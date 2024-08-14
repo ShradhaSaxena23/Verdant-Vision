@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}AI Engine{% endblock %}
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'predict.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="container">
+        <div class="card">
+            <h3>Why is it necessary to detect disease in plants?</h3>
+            <p>Plant diseases affect the growth of their respective species. In addition, some research gaps are identified from which to obtain greater transparency for detecting diseases in plants, even before their symptoms appear clearly. Diagnosis is one of the most important aspects of a plant pathologist's training. Without proper identification of the disease and the disease-causing agent, disease control measures can be a waste of time and further plant losses. Proper disease diagnosis is necessary.</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'plant.png' %}" alt="Plant" class="center-image">
+            <form id="uploadForm" method="post" enctype="multipart/form-data" action="{% url 'home' %}">
+                {% csrf_token %}
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+        <div class="card">
+            <h3>Prevent Plant Disease</h3>
+            <p>Follow these steps:</p>
+            <ul>
+                <li>Follow Good Sanitation Practices.</li>
+                <li>Fertilize to Keep Your Plants Healthy.</li>
+                <li>Inspect Plants for Diseases Before You Bring Them Home.</li>
+                <li>Allow the Soil to Warm Before Planting.</li>
+                <li>Ensure a Healthy Vegetable Garden By Rotating Crops.</li>
+                <li>Provide Good Air Circulation.</li>
+                <li>Remove Diseased Stems and Foliage.</li>
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}

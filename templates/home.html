@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}Home{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static "home.css" %}" />
+{% endblock %}
+
+{%  block content %}
+<div class="container">
+    <h1>Verdant Vision</h1>
+    <p>Click below to classify your image</p>
+    <button class="button"><a href="{% url "detect" %}">Search Image</a></button>
+</div>
+{% endblock %}

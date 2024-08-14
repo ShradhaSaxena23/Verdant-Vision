@@ -1,0 +1,59 @@
+{% extends "master.html" %}
+{% load static %} 
+
+{% block title %}About Page{% endblock %}
+{% block css_files%}
+<link rel="stylesheet" href="{% static "about.css" %}" />
+
+{% endblock %}
+{%  block content %}
+<div >
+    <div >
+        <div >
+            <h1>About Us</h1>
+        </div>
+    </div>
+
+    <div>
+        <div >
+            <p>Welcome to Plant Disease Detection, your go-to solution for identifying and managing plant diseases
+                using cutting-edge AI technology. Our mission is to empower farmers, gardeners, and agricultural
+                enthusiasts with the tools they need to protect their crops and plants.</p>
+
+            <p>At Plant Disease Detection, we understand the critical importance of early disease detection in
+                ensuring healthy plant growth and maximizing yields. Our platform utilizes advanced machine learning
+                algorithms to analyze images of plant leaves and accurately identify various diseases and
+                deficiencies.</p>
+
+            <p>Our team consists of experts in the fields of botany, agriculture, and artificial intelligence.
+                Combining our passion for plants with the latest technological innovations, we are dedicated to
+                providing reliable and accessible solutions for plant disease diagnosis.</p>
+
+                <h2>Why Is It Necessary to Detect Diseases in Plants?</h2>
+                <ul>
+                    <li>Plant diseases affect the growth of their respective species.</li>
+                    <li>Some research gaps are identified to obtain greater transparency for detecting diseases in plants,
+                        even before their symptoms appear clearly.</li>
+                    <li>Diagnosis is one of the most important aspects of a plant pathologist's training.</li>
+                    <li>Without proper identification of the disease and the disease-causing agent, disease control measures
+                        can be a waste of time and money and can lead to further plant losses.</li>
+                    <li>Proper disease diagnosis is necessary.</li>
+                </ul>
+
+
+            <h2>Our Goals</h2>
+            <ul>
+                <li>Provide accurate and timely diagnosis of plant diseases.</li>
+                <li>Empower farmers and gardeners with actionable insights to protect their crops.</li>
+                <li>Contribute to sustainable agriculture practices by minimizing crop losses.</li>
+                <li>Continuously improve our technology to stay at the forefront of plant disease detection.</li>
+            </ul>
+
+            <h2>Get In Touch</h2>
+            <p>Have questions or feedback? We'd love to hear from you! Feel free to <a href="{% url "contact" %}">contact
+                    us</a> for more information about our services.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

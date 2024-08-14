@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% load static %} 
+
+{% block title %}Contact Page{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static "contact.css" %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">  
+    <form id="contact" method="post">
+	{% csrf_token %}
+      <h3>Contact Form</h3>
+    
+      <fieldset>
+        <input placeholder="Your name" type="text" tabindex="1" name='name' required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Email Address" type="email" tabindex="2" name='email' required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" name='phone'>
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Please enter your query here...." tabindex="5" name='query' required></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+      
+    </form>
+  </div>
+{% endblock %}
